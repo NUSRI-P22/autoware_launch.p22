@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
   <!-- Essential parameters -->
-  <arg name="map_path" description="point cloud and lanelet2 map directory path"/>
-  <arg name="vehicle_model" description="vehicle model name"/>
-  <arg name="sensor_model" description="sensor model name"/>
-  <arg name="use_pointcloud_container" default="true" description="launch pointcloud container"/>
+  <!-- <arg name="map_path" description="point cloud and lanelet2 map directory path"/> -->
+  <arg name="vehicle_model" default="p22_vehicle" description="vehicle model name"/>
+  <arg name="sensor_model" default="p22_sensor_kit" description="sensor model name"/>
+  <arg name="use_pointcloud_container" default="false" description="launch pointcloud container"/>
   <arg name="pointcloud_container_name" default="pointcloud_container"/>
   <arg name="data_path" default="$(env HOME)/autoware_data" description="packages data and artifacts directory path"/>
 
@@ -14,14 +14,14 @@
   <!-- Optional parameters -->
   <!-- Modules to be launched -->
   <arg name="launch_vehicle" default="true" description="launch vehicle"/>
-  <arg name="launch_system" default="true" description="launch system"/>
-  <arg name="launch_map" default="true" description="launch map"/>
-  <arg name="launch_sensing" default="true" description="launch sensing"/>
-  <arg name="launch_sensing_driver" default="true" description="launch sensing driver"/>
-  <arg name="launch_localization" default="true" description="launch localization"/>
-  <arg name="launch_perception" default="true" description="launch perception"/>
-  <arg name="launch_planning" default="true" description="launch planning"/>
-  <arg name="launch_control" default="true" description="launch control"/>
+  <arg name="launch_system" default="false" description="launch system"/>
+  <arg name="launch_map" default="false" description="launch map"/>
+  <arg name="launch_sensing" default="false" description="launch sensing"/>
+  <arg name="launch_sensing_driver" default="false" description="launch sensing driver"/>
+  <arg name="launch_localization" default="false" description="launch localization"/>
+  <arg name="launch_perception" default="false" description="launch perception"/>
+  <arg name="launch_planning" default="false" description="launch planning"/>
+  <arg name="launch_control" default="false" description="launch control"/>
   <!-- Global parameters -->
   <arg name="use_sim_time" default="false" description="use_sim_time"/>
   <!-- Vehicle -->
@@ -115,12 +115,12 @@
   </group>
 
   <!-- API -->
-  <group>
+  <!-- <group>
     <include file="$(find-pkg-share autoware_launch)/launch/components/tier4_autoware_api_component.launch.xml"/>
-  </group>
+  </group> -->
 
   <!-- Tools -->
-  <group>
+  <!-- <group>
     <node
       pkg="rviz2"
       exec="rviz2"
@@ -130,5 +130,5 @@
       if="$(var rviz)"
       respawn="$(var rviz_respawn)"
     />
-  </group>
+  </group> -->
 </launch>
