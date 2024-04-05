@@ -13,7 +13,7 @@
 
   <!-- Optional parameters -->
   <!-- Modules to be launched -->
-  <arg name="launch_vehicle" default="false" description="launch vehicle"/>
+  <arg name="launch_vehicle" default="true" description="launch vehicle"/>
   <arg name="launch_system" default="false" description="launch system"/>
   <arg name="launch_map" default="true" description="launch map"/>
   <arg name="launch_sensing" default="false" description="launch sensing"/>
@@ -114,9 +114,9 @@
   </group>
 
   <!-- API -->
-  <!-- <group>
+  <group>
     <include file="$(find-pkg-share autoware_launch)/launch/components/tier4_autoware_api_component.launch.xml"/>
-  </group> -->
+  </group>
 
   <!-- Tools -->
   <!-- <group>
