@@ -18,7 +18,7 @@
   <arg name="launch_map" default="false" description="launch map"/>
   <arg name="launch_sensing" default="true" description="launch sensing"/>
   <arg name="launch_sensing_driver" default="false" description="launch sensing driver"/>
-  <arg name="launch_localization" default="false" description="launch localization"/>
+  <arg name="launch_localization" default="true" description="launch localization"/>
   <arg name="launch_perception" default="false" description="launch perception"/>
   <arg name="launch_planning" default="false" description="launch planning"/>
   <arg name="launch_control" default="false" description="launch control"/>
@@ -114,9 +114,9 @@
   </group>
 
   <!-- API -->
-  <!-- <group>
+  <group>
     <include file="$(find-pkg-share autoware_launch)/launch/components/tier4_autoware_api_component.launch.xml"/>
-  </group> -->
+  </group>
 
   <!-- Tools -->
   <!-- <group>
